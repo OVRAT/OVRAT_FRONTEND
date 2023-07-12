@@ -12,7 +12,10 @@ import IndividualMeterial from "./pages/individualMaterial/IndividualMeterial";
 import IndividualTask from "./pages/individualTask/IndividualTask";
 import Doubts from "./pages/doubts/Doubts";
 import IndividualDoubt from "./pages/individualDoubt/IndividualDoubt";
+// import { axios } from "axios";
 
+
+// axios.defaults
 function App() {
   return (
     <div className="app">
@@ -37,7 +40,7 @@ function App() {
             <Tasks dept="BCA" sem="5th" />
           </Route>
           <Route path="/task">
-            <IndividualTask/>
+            <IndividualTask />
           </Route>
           <Route path="/doubts/:subject">
             <Doubts dept="BCA" sem="5th" />

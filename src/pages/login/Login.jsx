@@ -1,16 +1,17 @@
-import Email from "@material-ui/icons/Email";
 import Lock from "@material-ui/icons/Lock";
 import React, { useState } from "react";
 import loginimg from "../../assets/login-side-img.svg";
-// import axios from "axios"
+import logo from "../../assets/logo.png";
+import axios from "axios"
 import { useHistory } from "react-router-dom";
 import "./style.scss";
+import { Person } from "@material-ui/icons";
 
 const Login = ({ setLoginUser }) => {
   const history = useHistory();
 
   const [user, setUser] = useState({
-    email: "",
+    username: "",
     password: "",
   });
 
@@ -23,11 +24,18 @@ const Login = ({ setLoginUser }) => {
   };
 
   const login = () => {
-    // axios.post("http://localhost:9002/login", user).then((res) => {
-    //   alert(res.data.message);
-    //   setLoginUser(res.data.user);
-    //   history.push("/");
-    // });
+    axios.post("http://localhost:8000/api/login/", user).then((res) => {
+      let access = res.data.access
+      alert(access);
+      // alert(res.data.access);
+
+      // setLoginUser(res.data.user);
+      // history.push("/");
+    }).catch((res) => {
+      // console.log(res.data);
+      // alert(res.detail)
+
+    });
   };
 
   return (
@@ -36,16 +44,17 @@ const Login = ({ setLoginUser }) => {
         <img src={loginimg} alt="" />
       </div>
       <div className="login-page">
+        <img src={logo} alt="logo" className="logo" />
         <h1>Login</h1>
         <div className="login-input">
           <input
             type="text"
-            name="email"
-            value={user.email}
+            name="username"
+            value={user.username}
             onChange={handleChange}
-            placeholder="Enter your Email"
+            placeholder="Enter your username"
           ></input>
-          <Email className="icon" />
+          <Person className="icon" />
         </div>
 
         <div className="login-input">
@@ -58,7 +67,7 @@ const Login = ({ setLoginUser }) => {
           ></input>
           <Lock className="icon" />
         </div>
-        
+
         <div className="btn" onClick={login}>
           Login
         </div>
