@@ -1,4 +1,4 @@
-# 📘 NEXTGEL
+# 📘 OVRAT FRONT END
 
 ####
 
@@ -79,14 +79,5 @@ this issue to a large extend by enabling a single window for teachers and facult
 
 ## 🐱‍👤 Contributors (IAI-DEV TEAM):
 
-- [MOMENI GILLES](gillemomeni@gmail.com)
-- [PYTHAGORE LOIC](frankpythagore@gmail.com)
-- [EPOUPA PELAYAH](pelepoupa@gmail.com)
-- [EDSON KANOU](edsonkanou55@gmail.com)
-- [TEMFACK EUNICE](eunicetemfack1@gmail.com)
-- [NGOUNOU LOUIS](louislumiere08@gmail.com)
-- [TIOMELA DANIEL](danielsitepro@gmail.com)
-- [YOSSA STEVE](ngueliatouyossasteve@gmail.com)
-- [YEBA BRAYAN](yebagabrayan@gmail.com)
-- [MESHA VEGAS](Meshvegas@gmail.com)
-- [AMAFA DIDEROT](destiny79360863@gmail.com)
+- [TIOMELA DANIEL](github.com/danieljou)
+- [MOMENI GILLES](github.com/monoc61)
