@@ -4,7 +4,7 @@ export const getItemdata = async (type, itemId, user) => {
   try {
     const res = await axios.get(`/api/${type}/find/${itemId}`, {
       headers: {
-        token: "Bearer " + user.accessToken,
+        'Authorization': "Bearer " + user.access,
       },
     });
     return res.data;

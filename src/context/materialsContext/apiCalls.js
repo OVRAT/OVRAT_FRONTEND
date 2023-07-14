@@ -23,7 +23,7 @@ export const getAllMaterials = async (user, dispatch) => {
   try {
     const res = await axios.get("https://nextgel-backend.herokuapp.com/api/material/all", {
       headers: {
-        token: "Bearer " + user.accessToken,
+        'Authorization': "Bearer " + user.access,
       },
     });
 
@@ -40,7 +40,7 @@ export const getRecentMaterials = async (user, dispatch) => {
   try {
     const res = await axios.get("https://nextgel-backend.herokuapp.com/api/material/recent", {
       headers: {
-        token: "Bearer " + user.accessToken,
+        'Authorization': "Bearer " + user.access,
       },
     });
 
@@ -57,7 +57,7 @@ export const createNewMaterial = async (material, user, dispatch) => {
   try {
     const res = await axios.post("https://nextgel-backend.herokuapp.com/api/material", material, {
       headers: {
-        token: "Bearer " + user.accessToken,
+        'Authorization': "Bearer " + user.access,
       },
     });
 
@@ -74,7 +74,7 @@ export const updateMaterial = async (material, user, dispatch) => {
   try {
     const res = await axios.put(`https://nextgel-backend.herokuapp.com/api/material/${material._id}`, material, {
       headers: {
-        token: "Bearer " + user.accessToken,
+        'Authorization': "Bearer " + user.access,
       },
     });
 
@@ -94,7 +94,7 @@ export const deleteMaterial = async (materialId, user, dispatch) => {
   try {
     const res = await axios.delete(`https://nextgel-backend.herokuapp.com/api/material/${materialId}`, {
       headers: {
-        token: "Bearer " + user.accessToken,
+        'Authorization': "Bearer " + user.access,
       },
     });
 
@@ -111,7 +111,7 @@ export const createCommentInMaterial = async (comment, user, dispatch) => {
   try {
     const res = await axios.post("https://nextgel-backend.herokuapp.com/api/material/comment", comment, {
       headers: {
-        token: "Bearer " + user.accessToken,
+        'Authorization': "Bearer " + user.access,
       },
     });
 
@@ -134,7 +134,7 @@ export const updateCommentInMaterial = async (comment, user, dispatch) => {
       comment,
       {
         headers: {
-          token: "Bearer " + user.accessToken,
+          'Authorization': "Bearer " + user.access,
         },
       }
     );
@@ -158,7 +158,7 @@ export const deleteCommentInMaterial = async (comment, user, dispatch) => {
       comment,
       {
         headers: {
-          token: "Bearer " + user.accessToken,
+          'Authorization': "Bearer " + user.access,
         },
       }
     );

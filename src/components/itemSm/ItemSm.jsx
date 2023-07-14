@@ -35,7 +35,7 @@ const ItemSm = ({ type, index, data, noLink }) => {
             "itemSm " + type + (type === "schedule" ? ` ${status}` : "")
           }
           onClick={
-            status === "ongoing" ? () => history.push("/class/join/91c40469-3a0c-4672-8695-9274537e1bbd") : () => {}
+            status === "ongoing" ? () => history.push("/class/join/91c40469-3a0c-4672-8695-9274537e1bbd") : () => { }
           }
         >
           <div className="column1">
@@ -48,7 +48,7 @@ const ItemSm = ({ type, index, data, noLink }) => {
           </div>
           <div className="column2">
             <h5>{title}</h5>
-            <p>{type === "schedule" ? teachers[0]?.fullname : subject?.name}</p>
+            {/* <p>{type === "schedule" ? teachers[0]?.fullname : subject?.name}</p> */}
           </div>
           {type === "schedule" && (
             <div className="column3">

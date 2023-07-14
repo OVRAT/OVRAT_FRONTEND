@@ -9,9 +9,9 @@ export const getSchedules = async (user, dispatch) => {
   dispatch(getSchedulesStart());
 
   try {
-    const res = await axios.get("https://nextgel-backend.herokuapp.com/api/schedule/all?course=BCA", {
+    const res = await axios.get("http://127.0.0.1:8000/api/categories/", {
       headers: {
-        token: "Bearer " + user.accessToken,
+        'Authorization': "Bearer " + user.access,
       },
     });
 
