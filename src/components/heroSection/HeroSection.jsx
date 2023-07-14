@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./style.scss";
 import heroImg from "../../assets/heroimg.jpg";
+import { AuthContext } from "../../context/authContext/AuthContext";
 
 const HeroSection = ({ small, large, title, dept, sem }) => {
+  const { user } = useContext(AuthContext);
+
   return (
     <div className={"heroSection " + (large ? "large" : "small")}>
       <div className="heroSection-content">
@@ -11,12 +14,16 @@ const HeroSection = ({ small, large, title, dept, sem }) => {
         </div>
 
         <div className="right">
-          <h3>{small ? (dept + " " + sem + " sem") : "Developer Daniel"} </h3>
+          <h3>
+            {/* {small
+              ? dept + " " + sem + " sem"
+              : `Hi ${user?.fullname.split(" ")[0]}!`} */}
+          </h3>
           <h1>{title}</h1>
           {large && (
             <p>
-              All your mecical and humain anatomy learning by Virtual Reality and Augmented Reality
-
+              All your college schedule, notes, task, doubts will be updated
+              here
             </p>
           )}
         </div>
