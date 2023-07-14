@@ -4,11 +4,14 @@ import KeyboardRoundedIcon from "@material-ui/icons/KeyboardRounded";
 import Navbar from "../../components/navbar/Navbar";
 import meetingImg from "../../assets/meeting.svg";
 import "./style.scss";
+import { v4 as uuid } from "uuid";
+import { useHistory } from "react-router-dom";
 
 const CreateClass = () => {
   const [meetingCode, setMeetingCode] = useState("");
   const joinWithCode = useRef(null);
   const joinBtn = useRef(null);
+  const history = useHistory();
 
   const showHideJoinBtn = () => {
     if (!meetingCode) {
@@ -28,9 +31,15 @@ const CreateClass = () => {
 
   const handleJoinWithCode = () => {
     if (meetingCode) {
-      window.location.href = `http://localhost:3000/class/${meetingCode}`;
+      window.location.href = `https://nextgel-backend.herokuapp.com/class/${meetingCode}`;
     }
   };
+
+  const handleCreateMeeting = (e) => {
+    const newClassId = uuid();
+    console.log(newClassId);
+    history.push(`/class/${newClassId}`)
+  }
 
   return (
     <div>
@@ -45,7 +54,7 @@ const CreateClass = () => {
           </div>
 
           <div className="btn-container">
-            <button className="createBtn">
+            <button className="createBtn" onClick={handleCreateMeeting}>
               <VideoCallOutlinedIcon className="icon" /> New meeting
             </button>
 
