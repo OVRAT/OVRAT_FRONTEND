@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "./style.scss";
-import heroImg from "../../assets/heroimg.jpg";
+import heroImg from "../../assets/heart.png";
 import { AuthContext } from "../../context/authContext/AuthContext";
 
 const HeroSection = ({ small, large, title, dept, sem }) => {
@@ -15,15 +15,14 @@ const HeroSection = ({ small, large, title, dept, sem }) => {
 
         <div className="right">
           <h3>
-            {/* {small
+            {small
               ? dept + " " + sem + " sem"
-              : `Hi ${user?.fullname.split(" ")[0]}!`} */}
+              : `Hi ${user?.user.last_name.split(" ")[0]} ${user?.user.first_name.split(" ")[0]} !`}
           </h3>
           <h1>{title}</h1>
           {large && (
             <p>
-              All your college schedule, notes, task, doubts will be updated
-              here
+              A platorm for learning and traning on humain anatomy
             </p>
           )}
         </div>

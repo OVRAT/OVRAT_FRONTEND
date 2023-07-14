@@ -5,11 +5,12 @@ import { useHistory } from "react-router-dom";
 import "./style.scss";
 import { AuthContext } from "../../context/authContext/AuthContext";
 import { loginUser } from "../../context/authContext/apiCalls";
+import { Alert, Dialog, DialogTitle } from "@mui/material";
 
 const Login = ({ setLoginUser }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
+  const [alert, setAlert] = useState(false)
   const { isFetching, dispatch } = useContext(AuthContext);
 
   const history = useHistory();
@@ -18,12 +19,19 @@ const Login = ({ setLoginUser }) => {
     if (username && password) {
       loginUser({ username, password }, dispatch);
     } else {
-      alert("Please fillup all fields");
+      setAlert(true)
+      // alert("Please fillup all fields");
     }
   };
 
   return (
     <div className="login">
+      <Dialog open={alert}>
+        <DialogTitle>
+          Erreur
+        </DialogTitle>
+      </Dialog>
+
       <div className="login-page">
         <h1>Login</h1>
         <div className="login-input">

@@ -16,10 +16,13 @@ export const loginUser = async (user, dispatch) => {
   dispatch(loginStart());
 
   try {
-    const res = await axios.post("http://127.0.0.1:8000/api/login/", user);
+    const res = await axios.post("http://127.0.0.1:8000/api/token/", user);
     dispatch(loginSuccess(res.data));
+
   } catch (err) {
+
     dispatch(loginFailure(err));
+
   }
 };
 
@@ -40,7 +43,7 @@ export const updateUser = async (user, userInfo, dispatch) => {
   try {
     const res = await axios.put(`https://nextgel-backend.herokuapp.com/api/user/${user._id}`, userInfo, {
       headers: {
-        token: "Bearer " + user.accessToken,
+        'Authorization': "Bearer " + user.access,
       },
     });
     dispatch(UpdateUserSuccess(res.data));

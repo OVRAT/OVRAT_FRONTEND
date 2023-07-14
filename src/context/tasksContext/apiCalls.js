@@ -23,7 +23,7 @@ export const getAllTasks = async (user, dispatch) => {
   try {
     const res = await axios.get("https://nextgel-backend.herokuapp.com/api/task/all", {
       headers: {
-        token: "Bearer " + user.accessToken,
+        'Authorization': "Bearer " + user.access,
       },
     });
 
@@ -40,7 +40,7 @@ export const getRecentTasks = async (user, dispatch) => {
   try {
     const res = await axios.get("https://nextgel-backend.herokuapp.com/api/task/recent", {
       headers: {
-        token: "Bearer " + user.accessToken,
+        'Authorization': "Bearer " + user.access,
       },
     });
 
@@ -57,7 +57,7 @@ export const createNewTask = async (task, user, dispatch) => {
   try {
     const res = await axios.post("https://nextgel-backend.herokuapp.com/api/task", task, {
       headers: {
-        token: "Bearer " + user.accessToken,
+        'Authorization': "Bearer " + user.access,
       },
     });
 
@@ -74,7 +74,7 @@ export const updateTask = async (task, user, dispatch) => {
   try {
     const res = await axios.put(`https://nextgel-backend.herokuapp.com/api/task/${task._id}`, task, {
       headers: {
-        token: "Bearer " + user.accessToken,
+        'Authorization': "Bearer " + user.access,
       },
     });
 
@@ -92,7 +92,7 @@ export const deleteTask = async (taskId, user, dispatch) => {
   try {
     const res = await axios.delete(`https://nextgel-backend.herokuapp.com/api/task/${taskId}`, {
       headers: {
-        token: "Bearer " + user.accessToken,
+        'Authorization': "Bearer " + user.access,
       },
     });
 
@@ -109,7 +109,7 @@ export const createCommentInTask = async (comment, user, dispatch) => {
   try {
     const res = await axios.post("https://nextgel-backend.herokuapp.com/api/task/comment", comment, {
       headers: {
-        token: "Bearer " + user.accessToken,
+        'Authorization': "Bearer " + user.access,
       },
     });
 
@@ -127,7 +127,7 @@ export const updateCommentInTask = async (comment, user, dispatch) => {
   try {
     const res = await axios.put(`https://nextgel-backend.herokuapp.com/api/task/comment/${comment.commentId}`, comment, {
       headers: {
-        token: "Bearer " + user.accessToken,
+        'Authorization': "Bearer " + user.access,
       },
     });
 
@@ -148,7 +148,7 @@ export const deleteCommentInTask = async (comment, user, dispatch) => {
       comment,
       {
         headers: {
-          token: "Bearer " + user.accessToken,
+          'Authorization': "Bearer " + user.access,
         },
       }
     );

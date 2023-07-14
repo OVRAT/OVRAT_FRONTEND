@@ -23,7 +23,7 @@ export const getAllDoubts = async (user, dispatch) => {
   try {
     const res = await axios.get("https://nextgel-backend.herokuapp.com/api/doubt/all", {
       headers: {
-        token: "Bearer " + user.accessToken,
+        'Authorization': "Bearer " + user.access,
       },
     });
 
@@ -40,7 +40,7 @@ export const getRecentDoubts = async (user, dispatch) => {
   try {
     const res = await axios.get("https://nextgel-backend.herokuapp.com/api/doubt/recent", {
       headers: {
-        token: "Bearer " + user.accessToken,
+        'Authorization': "Bearer " + user.access,
       },
     });
 
@@ -57,7 +57,7 @@ export const createNewDoubt = async (doubt, user, dispatch) => {
   try {
     const res = await axios.post("https://nextgel-backend.herokuapp.com/api/doubt", doubt, {
       headers: {
-        token: "Bearer " + user.accessToken,
+        'Authorization': "Bearer " + user.access,
       },
     });
 
@@ -74,7 +74,7 @@ export const updateDoubt = async (doubt, user, dispatch) => {
   try {
     const res = await axios.put(`https://nextgel-backend.herokuapp.com/api/doubt/${doubt._id}`, doubt, {
       headers: {
-        token: "Bearer " + user.accessToken,
+        'Authorization': "Bearer " + user.access,
       },
     });
 
@@ -92,7 +92,7 @@ export const deleteDoubt = async (doubtId, user, dispatch) => {
   try {
     const res = await axios.delete(`https://nextgel-backend.herokuapp.com/api/doubt/${doubtId}`, {
       headers: {
-        token: "Bearer " + user.accessToken,
+        'Authorization': "Bearer " + user.access,
       },
     });
 

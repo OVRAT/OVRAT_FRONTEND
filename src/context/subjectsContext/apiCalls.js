@@ -11,7 +11,7 @@ export const getSubjects = async (user, dispatch) => {
   try {
     const res = await axios.get("https://nextgel-backend.herokuapp.com/api/subject/all?course=BCA", {
       headers: {
-        token: "Bearer " + user.accessToken,
+        'Authorization': "Bearer " + user.access,
       },
     });
 

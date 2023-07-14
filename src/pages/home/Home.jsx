@@ -16,6 +16,7 @@ import { getSchedules } from "../../context/schedulesContext/apiCalls";
 
 const Home = () => {
   const { user } = useContext(AuthContext);
+
   const { recentMaterials, dispatch: materialsDispatch } =
     useContext(MaterialsContext);
   const { recentTasks, dispatch: tasksDispatch } = useContext(TasksContext);
@@ -46,7 +47,7 @@ const Home = () => {
       <Sidebar />
 
       <div className="container">
-        <HeroSection large title="Welcome to WebDesk" />
+        <HeroSection large title="Welcome to OVRAT" />
 
         <div className="widgets-row">
           <HomeWidget
